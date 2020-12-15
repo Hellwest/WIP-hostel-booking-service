@@ -5,14 +5,15 @@ import { TypeOrmModule } from "@nestjs/typeorm"
 
 import { typeORMConfig, graphQLConfig } from "./config"
 import { HealthController } from "./health.controller"
+import { SharedModule } from "./shared/shared.module"
 
 @Module({
   imports: [
     TerminusModule,
     TypeOrmModule.forRoot(typeORMConfig),
     GraphQLModule.forRoot(graphQLConfig),
+    SharedModule,
   ],
   controllers: [HealthController],
-  providers: [PlaceholderResolver],
 })
 export class AppModule {}
