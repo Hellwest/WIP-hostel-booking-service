@@ -6,6 +6,7 @@ import { TypeOrmModule } from "@nestjs/typeorm"
 import { typeORMConfig, graphQLConfig } from "./config"
 import { HealthController } from "./health.controller"
 import { SharedModule } from "./shared/shared.module"
+import { RoomsModule } from "./rooms/rooms.module"
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { SharedModule } from "./shared/shared.module"
     TypeOrmModule.forRoot(typeORMConfig),
     GraphQLModule.forRoot(graphQLConfig),
     SharedModule,
+    RoomsModule,
   ],
   controllers: [HealthController],
 })

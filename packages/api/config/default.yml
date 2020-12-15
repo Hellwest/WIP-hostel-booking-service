@@ -17,5 +17,5 @@ db:
   password: hellwest
   database: hostel
   logging: true
-  synchronize: false
-  migrationsRun: true
+  synchronize: true
+  migrationsRun: false
