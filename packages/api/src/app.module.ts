@@ -1,13 +1,19 @@
 import { Module } from "@nestjs/common"
+import { GraphQLModule } from "@nestjs/graphql"
 import { TerminusModule } from "@nestjs/terminus"
 import { TypeOrmModule } from "@nestjs/typeorm"
 
-import { typeORMConfig } from "./config"
+import { typeORMConfig, graphQLConfig } from "./config"
 import { HealthController } from "./health/health.controller"
+import { PlaceholderResolver } from "./placeholder/placeholder.resolver"
 
 @Module({
-  imports: [TerminusModule, TypeOrmModule.forRoot(typeORMConfig)],
+  imports: [
+    TerminusModule,
+    TypeOrmModule.forRoot(typeORMConfig),
+    GraphQLModule.forRoot(graphQLConfig),
+  ],
   controllers: [HealthController],
-  providers: [],
+  providers: [PlaceholderResolver],
 })
 export class AppModule {}

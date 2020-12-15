@@ -1,6 +1,14 @@
 server:
   port: 5000
 
+graphql:
+  debug: true
+  playground: true
+  introspection: true
+  autoSchemaFile: _schema.graphql
+  dateScalarMode: isoDate
+  depthLimit: 5
+
 db:
   type: postgres
   host: localhost
