@@ -21,6 +21,9 @@ module.exports = {
     "eslint-comments",
   ],
   extends: [
+    "eslint:recommended",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
     "plugin:jest/recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier",
