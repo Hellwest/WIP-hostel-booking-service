@@ -9,6 +9,8 @@ async function bootstrap() {
   const logger = new Logger("Bootstrap")
   const app = await NestFactory.create(AppModule)
 
+  app.enableShutdownHooks()
+
   try {
     await app.listen(serverConfig.port)
   } catch (error) {
