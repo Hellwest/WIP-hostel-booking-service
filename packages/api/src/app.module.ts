@@ -4,8 +4,7 @@ import { TerminusModule } from "@nestjs/terminus"
 import { TypeOrmModule } from "@nestjs/typeorm"
 
 import { typeORMConfig, graphQLConfig } from "./config"
-import { HealthController } from "./health/health.controller"
-import { PlaceholderResolver } from "./placeholder/placeholder.resolver"
+import { HealthController } from "./health.controller"
 
 @Module({
   imports: [
