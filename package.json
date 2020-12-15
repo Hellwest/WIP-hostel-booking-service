@@ -1,0 +1,22 @@
+{
+  "name": "hostel-booking-service",
+  "version": "1.0.0",
+  "description": "Portfolio project",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Hellwest/hostel-booking-service.git"
+  },
+  "keywords": [
+    "hostel",
+    "booking",
+    "nestjs",
+    "graphql",
+    "typeorm"
+  ],
+  "author": "https://github.com/hellwest",
+  "license": "ISC",
+  "workspaces": [
+    "packages/*"
+  ]
+}
