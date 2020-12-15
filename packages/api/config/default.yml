@@ -1,0 +1,13 @@
+server:
+  port: 5000
+
+db:
+  type: postgres
+  host: localhost
+  port: 5432
+  username: hellwest
+  password: hellwest
+  database: hostel
+  logging: true
+  synchronize: false
+  migrationsRun: true

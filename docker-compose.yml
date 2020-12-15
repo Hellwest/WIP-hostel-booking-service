@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:13.1
+    ports: 
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=hellwest
+      - POSTGRES_PASSWORD=hellwest
+      - POSTGRES_DB=hostel
+    volumes:
+      - postgresql-hostel-local:/var/lib/postgresql/data
+
+  pgweb:
+    image: sosedoff/pgweb:latest
+    restart: always
+    ports:
+      - "5433:8081"
+    environment: 
+      - DATABASE_URL=postgres://hellwest:hellwest@db:5432/hostel?sslmode=disable
+    depends_on:
+      - db
+
+volumes:
+  postgresql-hostel-local:
