@@ -53,9 +53,6 @@ module.exports = {
     "no-console": "error",
     "no-dupe-keys": "error",
     "object-shorthand": "error",
-    "@typescript-eslint/no-unused-vars": "off",
-    "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars-experimental": ["error"],
     "no-use-before-define": "error",
     "no-unneeded-ternary": "error",
     "no-nested-ternary": "error",
@@ -132,10 +129,9 @@ module.exports = {
     "filenames/no-index": "error",
 
     // ts
-    "@typescript-eslint/no-unused-vars": [
-      "error",
-      { argsIgnorePattern: "^_+" },
-    ],
+    "@typescript-eslint/no-unused-vars": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars-experimental": ["error"],
     "@typescript-eslint/explicit-member-accessibility": [
       "warn",
       { accessibility: "no-public" },

@@ -3,7 +3,7 @@ import { QueryFailedError } from "typeorm"
 const UNIQUE_CONSTRAINT_ERROR = "23505"
 
 export class UniqueConstraintError extends Error {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/explicit-module-boundary-types
   static is(error: any): error is QueryFailedError {
     if (!error) {
       return false
