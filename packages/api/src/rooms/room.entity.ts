@@ -1,14 +1,17 @@
 import { Field, ID, Int, ObjectType } from "@nestjs/graphql"
 import { GraphQLScalarType } from "graphql"
-import { EnhancedBaseEntity } from "src/shared/entities/enhanced-base-entity"
 import {
   Column,
   CreateDateColumn,
   Entity,
   Index,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from "typeorm"
+
+import { Booking } from "../bookings/booking.entity"
+import { EnhancedBaseEntity } from "../shared/entities/enhanced-base-entity"
 
 import { RoomStatusEnum } from "./types/room-status.enum"
 
@@ -30,6 +33,17 @@ export class Room extends EnhancedBaseEntity {
   })
   @Column({ default: RoomStatusEnum.FREE })
   status: RoomStatusEnum = RoomStatusEnum.FREE
+
+  @Field((): [typeof Booking] => [Booking], {
+    description: "Room bookings",
+    nullable: true,
+  })
+  @OneToMany(
+    (): typeof Booking => Booking,
+    (booking: Booking): Room => booking.room,
+    { cascade: true, nullable: true },
+  )
+  bookings?: Booking[]
 
   @Field({ description: "Room object creation date" })
   @CreateDateColumn({ type: "timestamptz" })
