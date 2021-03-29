@@ -43,5 +43,6 @@ type Mutation {
 
 """Input for creating a room"""
 input CreateRoomInput {
-  number: Float!
+  """Number of a room to create"""
+  number: Int!
 }
