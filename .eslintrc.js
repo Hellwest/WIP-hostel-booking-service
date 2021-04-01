@@ -1,5 +1,10 @@
 module.exports = {
   root: true,
+  settings: {
+    jest: {
+      version: 26,
+    },
+  },
   env: {
     node: true,
     es6: true,
