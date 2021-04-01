@@ -1,6 +1,7 @@
 import { ConflictException, Injectable } from "@nestjs/common"
 import { InjectRepository } from "@nestjs/typeorm"
-import { RoomRepository } from "src/repositories/room.repository"
+
+import { RoomRepository } from "../repositories/room.repository"
 
 import { Room } from "./room.entity"
 import { CreateRoomInput } from "./types/create-room.input"
